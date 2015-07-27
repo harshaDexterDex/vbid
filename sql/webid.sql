@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.3.11
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 27, 2015 at 01:01 PM
--- Server version: 5.6.24
--- PHP Version: 5.6.8
+-- Generation Time: Jul 27, 2015 at 02:54 PM
+-- Server version: 5.6.21
+-- PHP Version: 5.5.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `webid`
+-- Database: `vbid`
 --
 
 -- --------------------------------------------------------
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `webid_accesseshistoric` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_accounts` (
-  `id` int(7) NOT NULL,
+`id` int(7) NOT NULL,
   `nick` varchar(20) NOT NULL,
   `name` tinytext NOT NULL,
   `text` text NOT NULL,
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `webid_accounts` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_adminusers` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `username` varchar(32) NOT NULL DEFAULT '',
   `password` varchar(32) NOT NULL DEFAULT '',
   `hash` varchar(5) NOT NULL DEFAULT '',
@@ -104,7 +104,7 @@ INSERT INTO `webid_auccounter` (`auction_id`, `counter`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_auctions` (
-  `id` int(32) NOT NULL,
+`id` int(32) NOT NULL,
   `user` int(32) DEFAULT NULL,
   `title` varchar(70) DEFAULT NULL,
   `subtitle` varchar(70) DEFAULT NULL,
@@ -159,7 +159,7 @@ INSERT INTO `webid_auctions` (`id`, `user`, `title`, `subtitle`, `starts`, `desc
 --
 
 CREATE TABLE IF NOT EXISTS `webid_banners` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `type` enum('gif','jpg','png','swf') DEFAULT NULL,
   `views` int(11) DEFAULT NULL,
@@ -215,7 +215,7 @@ CREATE TABLE IF NOT EXISTS `webid_bannersstats` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_bannersusers` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `name` varchar(255) DEFAULT NULL,
   `company` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL
@@ -228,7 +228,7 @@ CREATE TABLE IF NOT EXISTS `webid_bannersusers` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_bids` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `auction` int(32) DEFAULT NULL,
   `bidder` int(32) DEFAULT NULL,
   `bid` double(16,2) DEFAULT NULL,
@@ -259,7 +259,7 @@ INSERT INTO `webid_bids` (`id`, `auction`, `bidder`, `bid`, `bidwhen`, `quantity
 --
 
 CREATE TABLE IF NOT EXISTS `webid_categories` (
-  `cat_id` int(4) NOT NULL,
+`cat_id` int(4) NOT NULL,
   `parent_id` int(4) DEFAULT NULL,
   `left_id` int(8) NOT NULL,
   `right_id` int(8) NOT NULL,
@@ -493,7 +493,7 @@ CREATE TABLE IF NOT EXISTS `webid_closedrelisted` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_community` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL DEFAULT '0',
   `messages` int(11) NOT NULL DEFAULT '0',
   `lastmessage` varchar(14) NOT NULL DEFAULT '0',
@@ -516,7 +516,7 @@ INSERT INTO `webid_community` (`id`, `name`, `messages`, `lastmessage`, `msgstos
 --
 
 CREATE TABLE IF NOT EXISTS `webid_comm_messages` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `boardid` int(11) NOT NULL DEFAULT '0',
   `msgdate` varchar(14) NOT NULL DEFAULT '',
   `user` int(11) NOT NULL DEFAULT '0',
@@ -863,7 +863,7 @@ INSERT INTO `webid_durations` (`days`, `description`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_faqs` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `question` varchar(200) NOT NULL DEFAULT '',
   `answer` text NOT NULL,
   `category` int(11) NOT NULL DEFAULT '0'
@@ -885,7 +885,7 @@ INSERT INTO `webid_faqs` (`id`, `question`, `answer`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_faqscategories` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `category` varchar(200) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
@@ -929,7 +929,7 @@ INSERT INTO `webid_faqscat_translated` (`id`, `lang`, `category`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_faqs_translated` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `lang` char(2) NOT NULL DEFAULT '',
   `question` varchar(200) NOT NULL DEFAULT '',
   `answer` text NOT NULL
@@ -953,7 +953,7 @@ INSERT INTO `webid_faqs_translated` (`id`, `lang`, `question`, `answer`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_feedbacks` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `rated_user_id` int(32) DEFAULT NULL,
   `rater_user_nick` varchar(20) DEFAULT NULL,
   `feedback` mediumtext,
@@ -969,7 +969,7 @@ CREATE TABLE IF NOT EXISTS `webid_feedbacks` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_fees` (
-  `id` int(5) NOT NULL,
+`id` int(5) NOT NULL,
   `fee_from` double(16,2) NOT NULL DEFAULT '0.00',
   `fee_to` double(16,2) NOT NULL DEFAULT '0.00',
   `fee_type` enum('flat','perc') NOT NULL DEFAULT 'flat',
@@ -1053,7 +1053,7 @@ INSERT INTO `webid_gateways` (`gateways`, `paypal_address`, `paypal_required`, `
 --
 
 CREATE TABLE IF NOT EXISTS `webid_groups` (
-  `id` int(5) NOT NULL,
+`id` int(5) NOT NULL,
   `group_name` varchar(50) NOT NULL DEFAULT '',
   `can_sell` int(1) NOT NULL DEFAULT '0',
   `can_buy` int(1) NOT NULL DEFAULT '0',
@@ -1076,7 +1076,7 @@ INSERT INTO `webid_groups` (`id`, `group_name`, `can_sell`, `can_buy`, `count`, 
 --
 
 CREATE TABLE IF NOT EXISTS `webid_increments` (
-  `id` int(3) NOT NULL,
+`id` int(3) NOT NULL,
   `low` double(16,2) DEFAULT '0.00',
   `high` double(16,2) DEFAULT '0.00',
   `increment` double(16,2) DEFAULT '0.00'
@@ -1102,7 +1102,7 @@ INSERT INTO `webid_increments` (`id`, `low`, `high`, `increment`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_logs` (
-  `id` int(25) NOT NULL,
+`id` int(25) NOT NULL,
   `type` varchar(5) NOT NULL,
   `message` text NOT NULL,
   `action_id` int(11) NOT NULL DEFAULT '0',
@@ -1138,7 +1138,7 @@ INSERT INTO `webid_logs` (`id`, `type`, `message`, `action_id`, `user_id`, `ip`,
 --
 
 CREATE TABLE IF NOT EXISTS `webid_maintainance` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `active` enum('y','n') DEFAULT NULL,
   `superuser` varchar(32) DEFAULT NULL,
   `maintainancetext` text
@@ -1158,7 +1158,7 @@ INSERT INTO `webid_maintainance` (`id`, `active`, `superuser`, `maintainancetext
 --
 
 CREATE TABLE IF NOT EXISTS `webid_membertypes` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `feedbacks` int(11) NOT NULL DEFAULT '0',
   `icon` varchar(30) NOT NULL DEFAULT ''
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
@@ -1186,7 +1186,7 @@ INSERT INTO `webid_membertypes` (`id`, `feedbacks`, `icon`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_messages` (
-  `id` int(50) NOT NULL,
+`id` int(50) NOT NULL,
   `sentto` int(25) NOT NULL DEFAULT '0',
   `sentfrom` int(25) NOT NULL DEFAULT '0',
   `fromemail` varchar(50) NOT NULL DEFAULT '',
@@ -1207,7 +1207,7 @@ CREATE TABLE IF NOT EXISTS `webid_messages` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_news` (
-  `id` int(32) NOT NULL,
+`id` int(32) NOT NULL,
   `title` varchar(200) NOT NULL DEFAULT '',
   `content` longtext NOT NULL,
   `new_date` int(8) NOT NULL DEFAULT '0',
@@ -1234,7 +1234,7 @@ CREATE TABLE IF NOT EXISTS `webid_news_translated` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_online` (
-  `ID` bigint(21) NOT NULL,
+`ID` bigint(21) NOT NULL,
   `SESSION` varchar(32) NOT NULL DEFAULT '',
   `time` bigint(21) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1;
@@ -1253,7 +1253,7 @@ INSERT INTO `webid_online` (`ID`, `SESSION`, `time`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_pendingnotif` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `auction_id` int(11) NOT NULL DEFAULT '0',
   `seller_id` int(11) NOT NULL DEFAULT '0',
   `winners` text NOT NULL,
@@ -1291,7 +1291,7 @@ INSERT INTO `webid_proxybid` (`itemid`, `userid`, `bid`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_rates` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `ime` tinytext NOT NULL,
   `valuta` tinytext NOT NULL,
   `symbol` char(3) NOT NULL DEFAULT ''
@@ -1478,7 +1478,7 @@ CREATE TABLE IF NOT EXISTS `webid_settings` (
 --
 
 INSERT INTO `webid_settings` (`sitename`, `siteurl`, `copyright`, `version`, `loginbox`, `newsbox`, `newstoshow`, `helpbox`, `perpage`, `moneyformat`, `moneydecimals`, `moneysymbol`, `currency`, `adminmail`, `banners`, `newsletter`, `logo`, `timecorrection`, `cron`, `archiveafter`, `datesformat`, `errortext`, `picturesgallery`, `maxpictures`, `buy_now`, `thumb_show`, `thumb_list`, `lastitemsnumber`, `hotitemsnumber`, `endingsoonnumber`, `boards`, `wordsfilter`, `aboutus`, `aboutustext`, `terms`, `termstext`, `privacypolicy`, `privacypolicytext`, `defaultcountry`, `defaultlanguage`, `catsorting`, `usersauth`, `descriptiontag`, `keywordstag`, `maxuploadsize`, `contactseller`, `theme`, `catstoshow`, `bn_only`, `users_email`, `boardsmsgs`, `activationtype`, `https`, `https_url`, `bn_only_disable`, `bn_only_percent`, `buyerprivacy`, `cust_increment`, `subtitle`, `extra_cat`, `fees`, `fee_type`, `fee_max_debt`, `fee_signup_bonus`, `fee_disable_acc`, `tax`, `taxuser`, `ae_status`, `ae_timebefore`, `ae_extend`, `cache_theme`, `hours_countdown`, `edit_starttime`, `banner_width`, `banner_height`, `counter_auctions`, `counter_users`, `counter_online`, `banemail`, `mandatory_fields`, `displayed_feilds`, `ao_hpf_enabled`, `ao_hi_enabled`, `ao_bi_enabled`, `proxy_bidding`, `recaptcha_public`, `recaptcha_private`, `spam_sendtofriend`, `spam_register`, `mod_queue`, `payment_options`, `autorelist`, `autorelist_max`, `invoice_yellow_line`, `invoice_thankyou`) VALUES
-('WeBid', 'http://cmlrdeshapriya/webid/', '', '1.1.2P2', 1, 1, 5, 1, 15, 1, 2, 2, 'GBP', 'admin@localhost', 1, 1, 'logo.gif', 0, 2, 30, 'EUR', 'An unexpected error occurred. The error has been forwarded to our technical team and will be fixed shortly', 1, 5, 2, 120, 120, 8, 8, 0, 'y', 'y', 'y', '', 'y', '', 'y', '', 'United Kingdom', 'EN', 'alpha', 'y', '', '', 51200, 'always', 'default', 20, 'n', 'y', 0, 1, 'n', '', 'n', 50, 'n', 0, 'y', 'n', 'n', 1, 25.00, 0.00, 'y', 'n', 'n', 'n', 120, 300, 'y', 24, 1, 468, 60, 'y', 'y', 'y', '', 'a:7:{s:9:"birthdate";s:1:"y";s:7:"address";s:1:"y";s:4:"city";s:1:"y";s:4:"prov";s:1:"y";s:7:"country";s:1:"y";s:3:"zip";s:1:"y";s:3:"tel";s:1:"y";}', 'a:7:{s:17:"birthdate_regshow";s:1:"y";s:15:"address_regshow";s:1:"y";s:12:"city_regshow";s:1:"y";s:12:"prov_regshow";s:1:"y";s:15:"country_regshow";s:1:"y";s:11:"zip_regshow";s:1:"y";s:11:"tel_regshow";s:1:"y";}', 'y', 'y', 'y', 'y', '', '', 1, 1, 'n', 'a:2:{i:0;s:13:"Wire Transfer";i:1;s:6:"Cheque";}', 'y', 10, '', 'Thank you for shopping with us and we hope to see you return soon!');
+('WeBid', 'http://vbid.herokuapp.com/', '', '1.1.2P2', 1, 1, 5, 1, 15, 1, 2, 2, 'GBP', 'admin@localhost', 1, 1, 'logo.gif', 0, 2, 30, 'EUR', 'An unexpected error occurred. The error has been forwarded to our technical team and will be fixed shortly', 1, 5, 2, 120, 120, 8, 8, 0, 'y', 'y', 'y', '', 'y', '', 'y', '', 'United Kingdom', 'EN', 'alpha', 'y', '', '', 51200, 'always', 'default', 20, 'n', 'y', 0, 1, 'n', '', 'n', 50, 'n', 0, 'y', 'n', 'n', 1, 25.00, 0.00, 'y', 'n', 'n', 'n', 120, 300, 'y', 24, 1, 468, 60, 'y', 'y', 'y', '', 'a:7:{s:9:"birthdate";s:1:"y";s:7:"address";s:1:"y";s:4:"city";s:1:"y";s:4:"prov";s:1:"y";s:7:"country";s:1:"y";s:3:"zip";s:1:"y";s:3:"tel";s:1:"y";}', 'a:7:{s:17:"birthdate_regshow";s:1:"y";s:15:"address_regshow";s:1:"y";s:12:"city_regshow";s:1:"y";s:12:"prov_regshow";s:1:"y";s:15:"country_regshow";s:1:"y";s:11:"zip_regshow";s:1:"y";s:11:"tel_regshow";s:1:"y";}', 'y', 'y', 'y', 'y', '', '', 1, 1, 'n', 'a:2:{i:0;s:13:"Wire Transfer";i:1;s:6:"Cheque";}', 'y', 10, '', 'Thank you for shopping with us and we hope to see you return soon!');
 
 -- --------------------------------------------------------
 
@@ -1507,7 +1507,7 @@ INSERT INTO `webid_statssettings` (`activate`, `accesses`, `browsers`, `domains`
 --
 
 CREATE TABLE IF NOT EXISTS `webid_tax` (
-  `id` int(2) NOT NULL,
+`id` int(2) NOT NULL,
   `tax_name` varchar(30) NOT NULL,
   `tax_rate` double(16,2) NOT NULL,
   `countries_seller` text NOT NULL,
@@ -1529,7 +1529,7 @@ INSERT INTO `webid_tax` (`id`, `tax_name`, `tax_rate`, `countries_seller`, `coun
 --
 
 CREATE TABLE IF NOT EXISTS `webid_useraccounts` (
-  `useracc_id` int(11) NOT NULL,
+`useracc_id` int(11) NOT NULL,
   `auc_id` int(15) NOT NULL DEFAULT '0',
   `user_id` int(15) NOT NULL DEFAULT '0',
   `date` int(15) NOT NULL DEFAULT '0',
@@ -1558,7 +1558,7 @@ CREATE TABLE IF NOT EXISTS `webid_useraccounts` (
 --
 
 CREATE TABLE IF NOT EXISTS `webid_users` (
-  `id` int(32) NOT NULL,
+`id` int(32) NOT NULL,
   `nick` varchar(20) NOT NULL,
   `password` varchar(32) DEFAULT '',
   `hash` varchar(5) DEFAULT '',
@@ -1612,7 +1612,7 @@ INSERT INTO `webid_users` (`id`, `nick`, `password`, `hash`, `name`, `address`, 
 --
 
 CREATE TABLE IF NOT EXISTS `webid_usersips` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `user` int(32) DEFAULT NULL,
   `ip` varchar(15) DEFAULT NULL,
   `type` enum('first','after') NOT NULL DEFAULT 'first',
@@ -1636,7 +1636,7 @@ INSERT INTO `webid_usersips` (`id`, `user`, `ip`, `type`, `action`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `webid_winners` (
-  `id` int(11) NOT NULL,
+`id` int(11) NOT NULL,
   `auction` int(32) NOT NULL DEFAULT '0',
   `seller` int(32) NOT NULL DEFAULT '0',
   `winner` int(32) NOT NULL DEFAULT '0',
@@ -1658,199 +1658,199 @@ CREATE TABLE IF NOT EXISTS `webid_winners` (
 -- Indexes for table `webid_accounts`
 --
 ALTER TABLE `webid_accounts`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_adminusers`
 --
 ALTER TABLE `webid_adminusers`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_auccounter`
 --
 ALTER TABLE `webid_auccounter`
-  ADD PRIMARY KEY (`auction_id`);
+ ADD PRIMARY KEY (`auction_id`);
 
 --
 -- Indexes for table `webid_auctions`
 --
 ALTER TABLE `webid_auctions`
-  ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
+ ADD PRIMARY KEY (`id`), ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_banners`
 --
 ALTER TABLE `webid_banners`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_bannersstats`
 --
 ALTER TABLE `webid_bannersstats`
-  ADD KEY `id` (`banner`);
+ ADD KEY `id` (`banner`);
 
 --
 -- Indexes for table `webid_bannersusers`
 --
 ALTER TABLE `webid_bannersusers`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_bids`
 --
 ALTER TABLE `webid_bids`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_categories`
 --
 ALTER TABLE `webid_categories`
-  ADD PRIMARY KEY (`cat_id`), ADD KEY `left_id` (`left_id`,`right_id`,`level`);
+ ADD PRIMARY KEY (`cat_id`), ADD KEY `left_id` (`left_id`,`right_id`,`level`);
 
 --
 -- Indexes for table `webid_community`
 --
 ALTER TABLE `webid_community`
-  ADD KEY `msg_id` (`id`);
+ ADD KEY `msg_id` (`id`);
 
 --
 -- Indexes for table `webid_comm_messages`
 --
 ALTER TABLE `webid_comm_messages`
-  ADD KEY `msg_id` (`id`);
+ ADD KEY `msg_id` (`id`);
 
 --
 -- Indexes for table `webid_countries`
 --
 ALTER TABLE `webid_countries`
-  ADD PRIMARY KEY (`country`);
+ ADD PRIMARY KEY (`country`);
 
 --
 -- Indexes for table `webid_faqs`
 --
 ALTER TABLE `webid_faqs`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_faqscategories`
 --
 ALTER TABLE `webid_faqscategories`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_faqs_translated`
 --
 ALTER TABLE `webid_faqs_translated`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_feedbacks`
 --
 ALTER TABLE `webid_feedbacks`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_fees`
 --
 ALTER TABLE `webid_fees`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_groups`
 --
 ALTER TABLE `webid_groups`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_increments`
 --
 ALTER TABLE `webid_increments`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_logs`
 --
 ALTER TABLE `webid_logs`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_maintainance`
 --
 ALTER TABLE `webid_maintainance`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_membertypes`
 --
 ALTER TABLE `webid_membertypes`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_messages`
 --
 ALTER TABLE `webid_messages`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_news`
 --
 ALTER TABLE `webid_news`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_online`
 --
 ALTER TABLE `webid_online`
-  ADD PRIMARY KEY (`ID`);
+ ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `webid_pendingnotif`
 --
 ALTER TABLE `webid_pendingnotif`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_rates`
 --
 ALTER TABLE `webid_rates`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- Indexes for table `webid_settings`
 --
 ALTER TABLE `webid_settings`
-  ADD PRIMARY KEY (`sitename`);
+ ADD PRIMARY KEY (`sitename`);
 
 --
 -- Indexes for table `webid_tax`
 --
 ALTER TABLE `webid_tax`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_useraccounts`
 --
 ALTER TABLE `webid_useraccounts`
-  ADD PRIMARY KEY (`useracc_id`);
+ ADD PRIMARY KEY (`useracc_id`);
 
 --
 -- Indexes for table `webid_users`
 --
 ALTER TABLE `webid_users`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_usersips`
 --
 ALTER TABLE `webid_usersips`
-  ADD PRIMARY KEY (`id`);
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `webid_winners`
 --
 ALTER TABLE `webid_winners`
-  ADD KEY `id` (`id`);
+ ADD KEY `id` (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1860,147 +1860,147 @@ ALTER TABLE `webid_winners`
 -- AUTO_INCREMENT for table `webid_accounts`
 --
 ALTER TABLE `webid_accounts`
-  MODIFY `id` int(7) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(7) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_adminusers`
 --
 ALTER TABLE `webid_adminusers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `webid_auctions`
 --
 ALTER TABLE `webid_auctions`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(32) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `webid_banners`
 --
 ALTER TABLE `webid_banners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_bannersusers`
 --
 ALTER TABLE `webid_bannersusers`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_bids`
 --
 ALTER TABLE `webid_bids`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT for table `webid_categories`
 --
 ALTER TABLE `webid_categories`
-  MODIFY `cat_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=198;
+MODIFY `cat_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=198;
 --
 -- AUTO_INCREMENT for table `webid_community`
 --
 ALTER TABLE `webid_community`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `webid_comm_messages`
 --
 ALTER TABLE `webid_comm_messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_faqs`
 --
 ALTER TABLE `webid_faqs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `webid_faqscategories`
 --
 ALTER TABLE `webid_faqscategories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `webid_faqs_translated`
 --
 ALTER TABLE `webid_faqs_translated`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `webid_feedbacks`
 --
 ALTER TABLE `webid_feedbacks`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_fees`
 --
 ALTER TABLE `webid_fees`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `webid_groups`
 --
 ALTER TABLE `webid_groups`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `webid_increments`
 --
 ALTER TABLE `webid_increments`
-  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+MODIFY `id` int(3) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `webid_logs`
 --
 ALTER TABLE `webid_logs`
-  MODIFY `id` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
+MODIFY `id` int(25) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `webid_maintainance`
 --
 ALTER TABLE `webid_maintainance`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `webid_membertypes`
 --
 ALTER TABLE `webid_membertypes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `webid_messages`
 --
 ALTER TABLE `webid_messages`
-  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_news`
 --
 ALTER TABLE `webid_news`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(32) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_online`
 --
 ALTER TABLE `webid_online`
-  MODIFY `ID` bigint(21) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+MODIFY `ID` bigint(21) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT for table `webid_pendingnotif`
 --
 ALTER TABLE `webid_pendingnotif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_rates`
 --
 ALTER TABLE `webid_rates`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=64;
 --
 -- AUTO_INCREMENT for table `webid_tax`
 --
 ALTER TABLE `webid_tax`
-  MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `id` int(2) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `webid_useraccounts`
 --
 ALTER TABLE `webid_useraccounts`
-  MODIFY `useracc_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `useracc_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `webid_users`
 --
 ALTER TABLE `webid_users`
-  MODIFY `id` int(32) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+MODIFY `id` int(32) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `webid_usersips`
 --
 ALTER TABLE `webid_usersips`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `webid_winners`
 --
 ALTER TABLE `webid_winners`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
