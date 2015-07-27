@@ -4,6 +4,6 @@ $DbDatabase = "heroku_e5d8c6f02fe5737"; // database name
 $DbUser	 = "bd8cea6f7cffc4"; // database username
 $DbPassword = "641818e4"; // database password
 $DBPrefix	= "vbid_";
-$main_path	= ""; // server path to your webid installation
-$MD5_PREFIX	= ""; // random code helps keep your users passwords secure
+$main_path	= "/app/"; // server path to your webid installation
+$MD5_PREFIX	= "randomcodepubz"; // random code helps keep your users passwords secure
 ?>
