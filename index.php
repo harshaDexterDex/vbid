@@ -11,9 +11,11 @@
  *   (at your option) any later version. Although none of the code may be
  *   sold. If you have been sold this script, get a refund.
  ***************************************************************************/
-
+error_reporting(E_ERROR | E_WARNING | E_PARSE | E_NOTICE);
 include 'common.php';
 include $main_path . 'language/' . $language . '/categories.inc.php';
+
+
 
 // Run cron according to SETTINGS
 if ($system->SETTINGS['cron'] == 2)
