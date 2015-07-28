@@ -1,9 +1,12 @@
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="smallpadding">
 <tr>
-	<td width="22%" valign="top" class="columL">
+<!--
+    <td width="22%" valign="top" class="columL">
     <div class="titTable1 rounded-right">
     	{L_276}
     </div>
+
+        
     <div class="smallpadding">
         <ul>
 <!-- BEGIN cat_list -->
@@ -17,6 +20,8 @@
         <a href="{SITEURL}browse.php?id=0">{L_277}</a>
     </div>
 </td>
+    
+    -->
 <td valign="top">
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="maincolum">
     <tr>
@@ -46,52 +51,64 @@
     <!-- ENDIF -->
     <!-- IF B_AUC_LAST -->
     <tr>
-        <td class="titTable4">{L_278}</td>
+       
+      <!--  <td class="titTable4">{L_278}</td> -->
     </tr>
+    
     <tr>
         <td class="table2">
+             <hr>
         <!-- BEGIN auc_last -->
-            <p style="display:block;" {auc_last.BGCOLOUR}>{auc_last.DATE} <a href="{SITEURL}item.php?id={auc_last.ID}">{auc_last.TITLE}</a></p>
+         <!--   <p style="display:block;" {auc_last.BGCOLOUR}>{auc_last.DATE} <a href="{SITEURL}item.php?id={auc_last.ID}">{auc_last.TITLE}</a></p> -->
         <!-- END auc_last -->
         </td>
     </tr>
     <!-- ENDIF -->
     <!-- IF B_AUC_ENDSOON -->
     <tr>
-        <td class="titTable4">{L_280}</td>
+       <!-- <td class="titTable4">{L_280}</td> 
     </tr>
-    <tr>
-        <td class="table2">
+    <tr> -->
+      <!--  <td class="table2"> -->
         <!-- BEGIN end_soon -->
-            <p style="display:block;" {end_soon.BGCOLOUR}>{end_soon.DATE} <a href="{SITEURL}item.php?id={end_soon.ID}">{end_soon.TITLE}</a></p>
+        <!--  <p style="display:block;" {end_soon.BGCOLOUR}>{end_soon.DATE} <a href="{SITEURL}item.php?id={end_soon.ID}">  {end_soon.TITLE}</a></p> -->
         <!-- END end_soon -->
-        </td>
-    </tr>
+      <!--  </td> -->
+  <!--  </tr> -->
     <!-- ENDIF -->
-    </table>
+  <!-- </table> -->
 </td>
+<!--
 <td width="20%" valign="top" class="columR">
 <!-- IF B_MULT_LANGS -->
-    <div class="titTable1 rounded-left">
+ 
+<!--
+<div class="titTable1 rounded-left">
     	{L_2__0001}
     </div>
     <div class="smallpadding">
         {FLAGS}
-    </div>
+    </div> -->
+
+
 <!-- ENDIF -->
 <!-- IF B_LOGIN_BOX -->
 	<!-- IF B_LOGGED_IN -->
-    <div class="titTable1 rounded-left">
+  <!--  <div class="titTable1 rounded-left">
     	{L_200} {YOURUSERNAME}
-    </div>
+    </div> -->
+    
+    <!--
     <div class="smallpadding">
         <ul>
             <li><a href="{SITEURL}edit_data.php?">{L_244}</a></li>
             <li><a href="{SITEURL}user_menu.php">{L_622}</a></li>
             <li><a href="{SITEURL}logout.php">{L_245}</a></li>
         </ul>
-    </div>
+    </div> -->
 	<!-- ELSE -->
+    
+    <!--
     <div class="titTable1 rounded-left">
     	{L_221}
     </div>
@@ -112,31 +129,38 @@
             <p align="center"><input type="submit" name="action" value="{L_275}" class="button"></p>
             <p><a href="{SITEURL}forgotpasswd.php">{L_215}</a></p>
         </form>
-    </div>
+    </div> 
+
+-->
 	<!-- ENDIF -->
 <!-- ENDIF -->
 <!-- IF B_HELPBOX -->
-    <div class="titTable1 rounded-left">
+
+ <!--   <div class="titTable1 rounded-left">
     	{L_281}
-    </div>
-    <div class="smallpadding">
+    </div> -->
+   
+<!--
+<div class="smallpadding">
         <ul>
-        <!-- BEGIN helpbox -->
+        <!-- BEGIN helpbox
             <li><a href="{SITEURL}viewhelp.php?cat={helpbox.ID}" alt="faqs"  class="new-window">{helpbox.TITLE}</a></li>
-        <!-- END helpbox -->
+        <!-- END helpbox
         </ul>
-    </div>
+    </div> -->
 <!-- ENDIF -->
 <!-- IF B_NEWS_BOX -->
+    
+    <!--
 <div class="titTable1 rounded-left">{L_282}</div>
 <div class="smallpadding">
 <ul>
-<!-- BEGIN newsbox -->
+<!-- BEGIN newsbox
 <li>{newsbox.DATE} - <a href="viewnews.php?id={newsbox.ID}">{newsbox.TITLE}</a></li> 
-<!-- END newsbox --> 
+<!-- END newsbox
 </ul>
 <a href="{SITEURL}viewallnews.php">{L_341}</a>
-</div>   
+</div>   -->
 <!-- ENDIF -->
 	</td>
 </tr>

@@ -51,40 +51,50 @@ $(document).ready(function() {
 });
 </script>
 </head>
+    
 <body>
 <div class="wrapper rounded-top rounded-bottom">
 	<div class="splitbox">
     	<div class="leftside">
-        	{LOGO}
+        	<img src="themes\default\logo.gif" style="width:40%;height:40%;">
         </div>
     	<div class="rightside">
         	{BANNER}
         </div>
     </div>
 	<div class="counters">
-        <span class="leftside"><!-- IF B_LOGGED_IN -->{L_200} {YOURUSERNAME}. <a href="{SSLURL}logout.php?">{L_245}</a><!-- ENDIF --></span>
-        <span class="rightside">{HEADERCOUNTER}</span>
+       <!-- <span class="leftside"><!-- IF B_LOGGED_IN -->
+        <!--{L_200} {YOURUSERNAME}. <a href="{SSLURL}logout.php?">{L_245}</a> -->
+        <!-- ENDIF -->
+        <!--</span>-->
+      <!--  <span class="rightside">{HEADERCOUNTER}</span> -->
 	</div>
-    <div class="navbar">
-        <ul>
-            <li><a href="{SITEURL}index.php?">{L_166}</a></li>
+    
+    
+   <!-- <div class="navbar">
+        <ul> -->
+        <!--    <li><a href="{SITEURL}index.php?">{L_166}</a></li> -->
+
 <!-- IF B_CAN_SELL -->
-			<li><a href="{SITEURL}select_category.php?">{L_028}</a></li>
+		<!--	<li><a href="{SITEURL}select_category.php?">{L_028}</a></li> -->
 <!-- ENDIF -->
 <!-- IF B_LOGGED_IN -->
-            <li><a href="{SITEURL}user_menu.php?">{L_622}</a></li>
-            <li><a href="{SSLURL}logout.php?">{L_245}</a></li>
+          <!--  <li><a href="{SITEURL}user_menu.php?">{L_622}</a></li>
+            <li><a href="{SSLURL}logout.php?">{L_245}</a></li> -->
 <!-- ELSE -->
-            <li><a href="{SSLURL}register.php?">{L_235}</a></li>
-            <li><a href="{SSLURL}user_login.php?">{L_052}</a></li>
+           <!-- <li><a href="{SSLURL}register.php?">{L_235}</a></li>
+            <li><a href="{SSLURL}user_login.php?">{L_052}</a></li> 
 <!-- ENDIF -->
 <!-- IF B_BOARDS -->
-			<li><a href="{SITEURL}boards.php">{L_5030}</a></li>
+		<!--	<li><a href="{SITEURL}boards.php">{L_5030}</a></li> -->
 <!-- ENDIF -->
-            <li><a href="{SITEURL}help.php" alt="faqs" class="new-window">{L_148}</a></li>
-        </ul>
-    </div>
+          <!--  <li><a href="{SITEURL}help.php" alt="faqs" class="new-window">{L_148}</a></li> -->
+     <!--   </ul>
+    </div> -->
+    
+    <!--
 	<div class="navbar">
+        
     	<div>
             <form name="search" action="{SITEURL}search.php" method="get">
                 {SELECTION_BOX}
@@ -92,5 +102,5 @@ $(document).ready(function() {
                 <input type="submit" name="sub" value="{L_399}" class="button">
                 <a href="{SITEURL}adsearch.php">{L_464}</a>
             </form>
-		</div>
-    </div>
+		</div> 
+    </div> -->
